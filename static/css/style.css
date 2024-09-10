@@ -1,0 +1,94 @@
+body {
+	width: 100%;;
+	height: 100vh;
+	background: url(/static/img/tts.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #3CDBF8;
+}
+h2 {
+	color: white;
+}
+textarea {
+	width: 80%;
+	height: 200px;
+	border-radius: 5px;
+	border: 2px solid #3CDBF8;
+	margin: 5px;
+	padding: 5px;
+	font-size: 15px;
+	font-family: 'Times New Roman', Times, serif;
+}
+input {
+	border: 1px solid #3CDBF8;
+	border-radius: 5px;
+	width: 100px;
+	height: 40px;
+	margin: 5px;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+
+/* Custom styling for the audio element */
+.custom-audio {
+    width: 100%; /* Full width of its container */
+    max-width: 500px; /* Max width for larger screens */
+    margin: 20px 0; /* Space around the audio element */
+    border: 1px solid #ddd; /* Border around the audio element */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Styling for the audio controls */
+.custom-audio::-webkit-media-controls-panel {
+    background-color: #3CDBF8; /* Background color for the controls */
+    border-radius: 5px; /* Rounded corners for the controls */
+}
+
+/* Customizing play button */
+.custom-audio::-webkit-media-controls-play-button,
+.custom-audio::-webkit-media-controls-pause-button {
+    background-color: #0056b3; /* Darker background for buttons */
+    border-radius: 50%; /* Circular buttons */
+}
+
+/* Styling the progress bar */
+.custom-audio::-webkit-media-controls-timeline {
+    height: 6px; /* Thickness of the progress bar */
+    background-color: #ddd; /* Background of the timeline */
+}
+
+/* Styling the volume slider */
+.custom-audio::-webkit-media-controls-volume-slider {
+    width: 100px; /* Width of the volume slider */
+    background-color: #ddd; /* Background of the slider */
+}
+
+/*h2 {
+    color: #007bff; /* Same as the audio controls to keep it consistent *
+}*/
+
+/* Styling the popup message */
+#popup-message {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #f44336; /* Error color */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Make sure it appears on top */
+}
+
+#popup-message ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#popup-message li {
+    margin: 0;
+    padding: 0;
+}
