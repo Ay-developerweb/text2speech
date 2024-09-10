@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Text to Speech</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <!-- Link to your custom CSS file -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <section>
+            <div>
+                <h2>Text to Speech <em>AI</em></h2>
+                <p>Created by: Coach Ayomide</p>
+            </div>
+        </section>
+
+        <section>
+            <form method="POST">
+                <textarea name="text" required>{{ text }}</textarea><br>
+                <input type="submit" value="Generate">
+            </form>
+        </section>
+
+        <section>
+            {% if audio_generated and text.strip() %}
+                <h2>Audio has been Generated</h2>
+                <audio class="custom-audio" controls>
+                    <source src="{{ url_for('static', filename='audio.mp3') }}" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                </audio>
+            {% endif %}
+        </section>
+
+        <!-- Popup Message Section -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+	    <center>
+		    <div id="popup-message">
+			    <ul>
+				    {% for category, message in messages %}
+				    <li class="{{ category }}">{{ message }}</li>
+				    {% endfor %}
+			    </ul>
+		    </div>
+	    </center>
+
+	    <script>
+		    // Hide popup after 5 seconds
+		    setTimeout(function() {
+			    var popup = document.getElementById('popup-message');
+			    if (popup) {
+                            popup.style.display = 'none';
+			    }
+		    }, 5000);
+	    </script>
+	    {% endif %}
+	{% endwith %}
+    </body>
+</html>
